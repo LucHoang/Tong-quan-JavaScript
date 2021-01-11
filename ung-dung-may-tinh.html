@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>May tinh</title>
+</head>
+<body>
+<h2>Caculator</h2>
+<form>
+    <input type="number" id="1"/>
+    <input type="number" id="2"/><br/>
+    <p>
+        <button type="button" onclick="tinhtoan1()">Addition(+)</button>
+        <button type="button" onclick="tinhtoan2()">Subtraction(-)</button>
+        <button type="button" onclick="tinhtoan3()">Multiplication(x)</button>
+        <button type="button" onclick="tinhtoan4()">Division(/)</button>
+
+    </p>
+    <p><div id="mylocation"></div></p>
+</form>
+<script>
+    function tinhtoan1()
+    {
+        var s1 = document.getElementById("1").value;
+        var s2 = document.getElementById("2").value;
+        var so1 = parseFloat(s1);
+        var so2 = parseFloat(s2);
+        var kq = so1 + so2;
+        var ketqua = "Result Addition: "+kq;
+        document.getElementById("mylocation").innerHTML=ketqua;
+    }
+    function tinhtoan2()
+    {
+        var s1 = document.getElementById("1").value;
+        var s2 = document.getElementById("2").value;
+        var so1 = parseFloat(s1);
+        var so2 = parseFloat(s2);
+        var kq = so1 - so2;
+        var ketqua = "Result Subtraction: "+kq;
+        document.getElementById("mylocation").innerHTML=ketqua;
+    }
+    function tinhtoan3()
+    {
+        var s1 = document.getElementById("1").value;
+        var s2 = document.getElementById("2").value;
+        var so1 = parseFloat(s1);
+        var so2 = parseFloat(s2);
+        var kq = so1 * so2;
+        var ketqua = "Result Multiplication: "+kq;
+        document.getElementById("mylocation").innerHTML=ketqua;
+    }
+    function tinhtoan4()
+    {
+        var s1 = document.getElementById("1").value;
+        var s2 = document.getElementById("2").value;
+        var so1 = parseFloat(s1);
+        var so2 = parseFloat(s2);
+        var kq = so1 / so2;
+        var ketqua = "Result Division: "+kq;
+        document.getElementById("mylocation").innerHTML=ketqua;
+    }
+
+</script>
+</body>
+</html>
