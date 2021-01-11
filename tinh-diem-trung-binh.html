@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh diem trung binh</title>
+</head>
+<body>
+<script>
+    let vatly;
+    let hoahoc;
+    let sinhhoc;
+    vatly = prompt("Nhap diem vat ly: ");
+    hoahoc = prompt("Nhap diem hoa hoc: ");
+    sinhhoc = prompt("Nhap diem sinh hoc: ")
+    let vl = parseFloat(vatly);
+    let hh = parseFloat(hoahoc);
+    let sh = parseFloat(sinhhoc);
+    let trungbinh = (vl + hh + sh) / 3;
+    document.write("Diem trung binh la: " + trungbinh);
+</script>
+</body>
+</html>
