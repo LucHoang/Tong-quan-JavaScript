@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen cau truc dieu kien</title>
+</head>
+<body>
+<script>
+    //bai1
+    var a = prompt("nhap vao a: ");
+    var b = prompt("nhap vao b: ");
+    var result = a % b==0 ? "a chia het cho b": "a khong chia het cho b";
+    alert(result);
+
+    //bai2
+    var age = prompt("Nhap tuoi");
+    age >= 16 ? alert("Du dieu kien nhap hoc"): alert("Khong du dieu kien nhap hoc");
+
+
+    //bai3
+    var so =  parseInt(prompt("Nhap so nguyen bat ky"));
+    if (so != 0){
+        so > 0? alert("So nhap vao lon hon 0"):alert("So nhap vao nho hon 0");
+    } else alert("So nhap vao bang 0");
+
+
+    //bai4
+    var so1 = prompt("nhap vao so nguyen thu nhat");
+    var so2 = prompt("nhap vao so nguyen thu hai");
+    var so3 = prompt("nhap vao so nguyen thu ba");
+    var max;
+    so1>so2?max=so1:max=so2;
+    max>so3?alert("so lon nhat la: "+max):alert("so lon nhat la: "+so3);
+
+
+</script>
+</body>
+</html>
