@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>calculator</title>
+    <meta charset="utf-8"/>
+    <style>
+        input{
+            width:210px;
+            height:30px;
+            text-align:right;
+        }
+        td{
+            width:50px;
+            height:40px;
+            text-align:center;
+            border-radius:5px;
+        }
+        table{
+            margin:auto;
+        }
+        button{
+            background-color:rgb(218, 220, 224);
+            width:50px;
+            height:40px;
+
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="4"><input type="text" id="display" /></th>
+    </tr>
+    <tr>
+        <th colspan="4"><input type="text" id="mathametics" value="0"/></th>
+
+    </tr>
+    <tr>
+        <td><button type="button" onclick="reset();" style="color: red">AC</button></td>
+        <td><button type="button" onclick="backSpace();" style="color: darkcyan">DEL</button></td>
+        <td><button type="button"></button></td>
+        <td><button type="button"></button></td>
+    </tr>
+    <tr>
+        <td><button type="button" id="plus" onclick="operator('+');">+</button></td>
+        <td><button type="button" id="minus" onclick="operator('-');">-</button></td>
+        <td><button type="button" id="mult" onclick="operator('x');">x</button></td>
+        <td><button type="button" id="div" onclick="operator('/');">/</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" id="7" onclick="clickNumber('7');">7</button></td>
+        <td><button type="button" id="8" onclick="clickNumber('8');">8</button></td>
+        <td><button type="button" id="9" onclick="clickNumber('9');">9</button></td>
+        <td><button type="button"></button></td>
+    </tr>
+    <tr>
+        <td><button type="button" id="4" onclick="clickNumber('4');">4</button></td>
+        <td><button type="button" id="5" onclick="clickNumber('5');">5</button></td>
+        <td><button type="button" id="6" onclick="clickNumber('6');">6</button></td>
+        <td><button type="button"></button></td></button></td>
+    </tr>
+    <tr>
+        <td><button type="button" id="1" onclick="clickNumber('1');">1</button></td>
+        <td><button type="button" id="2" onclick="clickNumber('2');">2</button></td>
+        <td><button type="button" id="3" onclick="clickNumber('3');">3</button></td>
+        <td><button type="button"></button></td>
+    </tr>
+    <tr>
+        <td><button type="button" id="0" onclick="clickNumber('0');">0</button></td>
+        <td><button type="button"></button></td>
+        <td><button type="button"></button></td>
+        <td><button type="button" onclick="operator('=');" style="background-color: greenyellow;">=</button></td>
+    </tr>
+</table>
+<script>
+    var result=0;
+    var displayMath=document.getElementById('mathametics');
+    var displayValue=document.getElementById('display');
+    var operation='';
+    var number=0;
+
+    function reset(){
+        displayMath.value='0';
+        displayValue.value='';
+        operation='';
+        result=0;
+
+    }
+    function backSpace(){
+        displayMath.value=displayMath.value.slice(0,displayMath.value.length-1);
+    }
+    function clickNumber(n){
+
+        if(displayMath.value==0){
+            displayMath.value=n;
+        }else{
+            displayMath.value+=n;
+        }
+    }
+    function operator(n){
+        number=parseInt(displayMath.value);
+        if(n!="="){
+            displayValue.value+=operation+displayMath.value;
+        }else{
+            displayValue.value+=operation+displayMath.value+"=";
+
+        }
+
+        switch(operation){
+            case '':
+                result=number;
+
+                break;
+            case '+':
+                result+=number;
+
+                break;
+            case '-':
+                result-=number;
+
+                break;
+            case 'x':
+                result*=number;
+
+                break;
+            case '/':
+                if(number==0){
+                    displayValue.value="error";
+                }else{
+                    result/=number;
+                }
+
+
+
+        }
+        operation=n;
+        if(n=="="){
+            displayMath.value=result;
+        }else{
+            displayMath.value='0';
+        }
+
+    }
+
+</script>
+</body>
+</html>
