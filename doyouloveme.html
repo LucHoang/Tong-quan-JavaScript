@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do you love me</title>
+    <script>
+        function thongbao()
+        {
+            alert("You are right");
+        }
+        function noHover()
+        {
+            var x = Math.round(Math.random() * window.innerWidth);
+            var y = Math.round(Math.random() * window.innerHeight);
+            document.getElementById('btnNo').style.left = x + 'px';
+            document.getElementById('btnNo').style.top = y + 'px';
+        }
+    </script>
+</head>
+<body>
+<h1>Do you love me</h1>
+<button type="button" onclick="thongbao()">YES</button>
+<button type="button " id="btnNo" onmouseover="noHover()" style="position: absolute">NO</button>
+
+
+</body>
+</html>
