@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp</title>
+</head>
+<body>
+<!--
+    //bai 1
+    /*for (let i =1; i < 100; i++) {
+        document.write(i+" ");
+    }
+    //document.write("Đã hoàn thành");
+    alert("Đã hoàn thành")*/
+
+    //bai 3, 5
+    /*document.write(0+" ");
+    let a = 0, b = 1, i=1, total=0;
+    for (let n=0;i<20;i++) {
+        n = a + b;
+        a = b;
+        b = n;
+        document.write(n+" ");
+        total += n;
+    }
+    alert("Tong la: "+total);*/
+
+    //bai 6
+    /*let i=1, n, total =0, count = 30;
+    for (n=1; i<=count; n++) {
+        if (n%7==0) {
+            total += n;
+            i++;
+        }
+    }
+    alert("Tổng 30 số là: "+total);*/
+-->
+<h2>Game đoán số</h2>
+    <button onclick="document.getElementById('demo').innerHTML = getRndInteger()">Chơi</button>
+<P id="da"></P>
+
+
+<script>
+    function getRndInteger() {
+        let min = parseInt(prompt("Bạn muốn đoán số trong khoảng từ: "));
+        let max = parseInt(prompt("Đến: "));
+        let dapan = Math.floor(Math.random() * (max - min)) + min;
+        let i=3;
+        while (i > 0) {
+            let so = parseInt(prompt("Số bạn đoán là: "));
+            if (so == dapan) {
+                alert("Bạn đoán chính xác!");
+                break;
+            } else if (so > dapan) {
+                alert("Bạn đoán lớn hơn đáp án! Số lượt đoán còn lại: "+(i-1));
+            } else  if (so < dapan) {
+                alert("Bạn đoán nhỏ hơn đáp án! Số lượt đoán còn lại: "+(i-1));
+            }
+            i--;
+            //alert("Bạn đoán chưa chính xác! Hãy thử lại");
+        }
+        document.getElementById("da").innerHTML="Đáp án: "+dapan;
+    }
+</script>
+</body>
+</html>
