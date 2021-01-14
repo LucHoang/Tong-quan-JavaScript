@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So nguyen to</title>
+</head>
+<body>
+<script>
+    let numbers = parseInt(prompt("Nhập số lượng số nguyên cần in ra: "));
+    let count = 1;
+    let dk = 't';
+    for (let N = 2;count<=numbers;N++) {
+        for (let i = 2; i<N; i++) {
+            if (N%i==0) {
+               dk = 'f';
+               break;
+            } else {dk = 't';}
+        }
+        if (dk=='t') {
+            count++;
+            //console.log(N);
+            document.write(N+" ");
+        }
+    }
+</script>
+</body>
+</html>
