@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh lai ngan hang</title>
+</head>
+<body>
+<label for="a"> Số tiền gửi vào ngân hàng :</label>
+<input type="text" value="" id="a">
+
+<label for="r"> Lãi suất (%):</label>
+<input type="text" value="" id="r">
+
+<label for="n"> Số tháng gửi :</label>
+<input type="text" value="" id="n">
+
+<input type="button" value="Tính tổng lãi" onclick="Calculate()">
+<h3 id="result"></h3>
+<script>
+    let res = document.getElementById("result");
+    function Calculate() {
+        let a = parseFloat(document.getElementById("a").value);
+        let r = parseFloat(document.getElementById("r").value);
+        let n = parseFloat(document.getElementById("n").value);
+        let result = 0 ;
+        let kq;
+        if (isNaN(a)||isNaN(r)||isNaN(n)) {
+            res.innerHTML = " input  must be a number "
+        }  else {
+                result = a * (Math.pow((1+r/100), n));
+            }
+            kq = Math.round(result) - a;
+            res.innerHTML = "Tổng lãi phải trả: "+kq;
+        }
+
+</script>
+</body>
+</html>

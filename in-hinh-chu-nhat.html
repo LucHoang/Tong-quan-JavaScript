@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In hình chữ nhật</title>
+</head>
+<body>
+<h2 id="result"></h2>
+<script>
+    function printRactangle(w,h) {
+        let result = '';
+        let res = document.getElementById("result");
+        for (let i = 0; i<=h; i++) {
+            for ( let j = 0; j<=w; j++) {
+                if ( i == 0 || i == h ) {
+                    result += '*';
+                } else {
+                    if ( j == 0 || j == w) {
+                        result += '*';
+                    } else {
+                        result += '&nbsp&nbsp;';
+                    }
+                }
+
+            }
+            result += '<br/>'
+        }
+        res.innerHTML = result;
+    }
+    printRactangle(20,6);
+</script>
+</body>
+</html>
