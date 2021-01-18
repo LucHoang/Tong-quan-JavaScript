@@ -11,7 +11,9 @@
 <input type="text" id="txtValue"/>
 <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
 <input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+<input type="button" id="checkdx" value="Check" onclick="check();"/>
 <div id="result"></div>
+<div id="kqdx"></div>
 <script>
     let x = 0;
     let array = Array();
@@ -24,9 +26,39 @@
     function display_array() {
         let e = "<hr/>";
         for (let i = 0; i < array.length; i++) {
-            e += "Element " + i + " = " + array[i] + "<br/>";
+            e += "Element " + i + " = " + array[i] + "<br/>";1
         }
         document.getElementById("result").innerHTML = e;
+    }
+
+    function check() {
+    let y=[];
+    for (let j = 0;j<array.length;j++) {
+        y[j]=array[j];
+    }
+    let ss = '';
+    let first = 0;
+    let last = y.length - 1;
+    while (first < last) {
+        let b = y[first];
+        y[first] = y[last];
+        y[last] = b;
+        first++;
+        last--;
+    }
+    for (let i=0;i<y.length;i++) {
+        if (array[i]!=y[i]) {
+            ss = 'f';
+            break;
+        } else {ss ='t';}
+    }
+
+        if (ss == 't') {
+            document.getElementById("kqdx").innerHTML = y + " -> Mảng vừa nhập vào là mảng đối xứng";
+            //document.write(y);
+        } else {
+            document.getElementById("kqdx").innerHTML = y + " -> Mảng vừa nhập vào không đối xứng";
+        }
     }
 </script>
 
