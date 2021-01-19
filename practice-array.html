@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng</title>
+</head>
+<body>
+<script>
+    // //bài 1
+    // let numbers=[2,4,8,45,23,54,4,5,6,99,34];
+    // let count = 0;
+    // for (let i=0;i<numbers.length;i++) {
+    //     if (numbers[i]>=10) {
+    //         count++;
+    //     }
+    // }
+    // alert("Tổng số nguyên lớn hơn 10: "+count+" số");
+
+    //////////////////////////////////////////////////////////
+    // //bài 2, 3
+    // let numbers = [3, 5, 11, 3, 2, 10];
+    // let max = numbers[0];
+    // let index = 0;
+    // for (let i = 1; i < numbers.length; i++) {
+    //     if (numbers[i] > max) {
+    //         max = numbers[i];
+    //         index = i;
+    //     }
+    // }
+    // let count = 0;
+    // for (let j=0;j<numbers.length;j++) {
+    //     count += numbers[j];
+    // }
+    // let total = count/6;
+    // alert("Max: " + max + " at position " + index +" Giá trị trung bình: "+total);
+
+    ///////////////////////////////////////////////////////////////
+    // //bài 7
+    // let array=[2,1,4,5,2,7,8,9];
+    // let v=prompt("Nhập số nguyên muốn tìm và xóa khỏi mảng: ");
+    // for (let i=0;i<array.length;i++) {
+    //     if (array[i]==v) {
+    //         array.splice(i,1);
+    //     }
+    // }
+    // console.log(array);
+
+    ///////////////////////////////////////////////////////////////////
+    // //bài 8
+    // var points = [40, 100, 1, 5, 25, 10];
+    // points.sort(function(a, b){return b - a});
+    // document.write(points);
+
+    /////////////////////////////////////////////////////////////////////////
+    // //bài 9
+    // let a = [2,5,32,5,3];
+    // let b = [1,7,215,3747,54];
+    // let c = a.concat(b);
+    // document.write(c);
+
+    ///////////////////////////////////////////////////////////////////////
+    // //bài 1- 02
+    // let a = [
+    //     [1, 2, 1, 24],
+    //     [8, 11, 9, 4],
+    //     [7, 0, 7, 27],
+    //     [7, 4, 28, 14],
+    //     [3, 10, 26, 7]
+    // ];
+    // for (let i in a) {
+    //     console.log("Row "+i);
+    //     for (let j in a[i]) {
+    //         console.log(a[i][j]);
+    //     }
+    // }
+
+    ///////////////////////////////////////////////////////////////////
+    // //bài 2-02
+    // let arrays=['c','s','c',2,6,1];
+    // let b=arrays.reverse();
+    // let c=b.join("");
+    // console.log(c);
+
+    ////////////////////////////////////////////////////////////////////
+    // //bài 3-02
+    // let a=['r','t',3,4,'r',4,'e',7];
+    // let count =0;
+    // for (let i=0;i<a.length;i++) {
+    //     if ((typeof a[i])=="number") {
+    //         count++;
+    //     }
+    // }
+    // console.log(count);
+
+    ////////////////////////////////////////////////////////////
+    // ///bài 4-02
+    // let str = 'day la mot chuoi ';
+    // a=str.length;
+    // let count=0;
+    // for (let i=0;i<a;i++) {
+    //     if ((str[i]==' ') && (str[i+1]!=' ')) {
+    //         count++;
+    //     }
+    // }
+    // console.log(count);
+
+    ////////////////////////////////////////////////////////////////
+    // //bài 5-02
+    // let a = prompt("Nhập vào chuỗi thứ nhất: ");
+    // let b = prompt("Nhập vào chuỗi thứ 2: ");
+    // if (a==b) {
+    //     alert("2 chuỗi giống nhau")
+    // } else {alert("hai chuỗi khác nhau");}
+
+    //////////////////////////////////////////////////////////////////
+    //bài 6-02
+    //let a = [3,23,43,'sfd','e','-',3,4,'-'];
+    let max=prompt("Nhập số phần tử của mảng: ");
+    let a = [];
+    for (let j=0;j<max;j++) {
+        a[j]=prompt('a['+j+']=');
+    }
+    for (let i=0;i<a.length;i++) {
+        if (a[i]=='-') {
+            a[i]='_';
+        }
+    }
+    console.log(a);
+
+
+
+</script>
+</body>
+</html>
