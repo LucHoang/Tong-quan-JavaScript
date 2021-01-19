@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<script>
+    let value = prompt("Nhập từ bạn muốn tra cứu: ");
+    let english = ['go', 'teacher', 'run', 'dog']
+    let vietnam = ['Đi', 'Giáo viên', 'Chạy', 'Con chó'];
+    let tb ='f';
+    for (let i = 0; i < english.length; i++) {
+        if (value == english[i]) {
+            alert(english[i] + " tiếng việt nghĩa là: " + vietnam[i]);
+            tb='t';
+            break;
+        }
+
+    }
+    if (tb=='f') {
+        alert("Không tìm thấy");
+    }
+
+</script>
+
+</body>
+</html>
