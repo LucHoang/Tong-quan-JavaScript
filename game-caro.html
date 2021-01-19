@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cờ caro</title>
+</head>
+<style>
+    body {
+        background-color: #cccccc;
+    }
+    table {
+        background-color: white;
+        margin: auto;
+        margin-top: 30px;
+    }
+    td {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 35px;
+    }
+</style>
+<body>
+<!--//cheat sheet-->
+<table id="caro-game" class="my-table" border="1px" cellspacing="0"></table>
+<script>
+    const maxRow = 15;
+    const maxCol = 15;
+    const PLAYER_X = 1;
+    const PLAYER_O = 2;
+    const VALUE_X = "X";
+    const VALUE_O = "O";
+
+    let turn = PLAYER_X;
+
+    //Ve ban co
+    function drawBoard() {
+        let str = '';
+        for (let i = 0; i < maxRow; i++) {
+            str += '<tr>';
+            for (let j = 0; j < maxCol; j++) {
+                // str += '<td id="cell-'+i+"-"+j+'" onclick="clickCell('+i+","+j+')"></td>';
+                str += `<td id="cell-${i}-${j}" onclick="clickCell(${i},${j})"></td>`;
+            }
+            str += "</tr>";
+        }
+        document.getElementById('caro-game').innerHTML = str;
+    }
+
+    //click X,O
+    function clickCell(x,y) {
+        let cell = document.getElementById("cell-"+x+"-"+y);
+        console.log(cell);
+        if(cell.innerHTML === ""){
+            if (turn == PLAYER_X) {
+                cell.innerHTML = VALUE_X;
+                turn = PLAYER_O;
+            }else {
+                cell.innerHTML = VALUE_O;
+                turn = PLAYER_X;
+            }
+        }
+        checkWin(x,y);
+    }
+    function getValue(x,y) {
+        let value = document.getElementById(`cell-${x}-${y}`).innerHTML;
+        return value;
+    }
+
+    function checkNgang(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while (getValue(x,y) == getValue(x,y+i)){
+            count++;
+            i++;
+        }
+
+        while (getValue(x,y) == getValue(x,y-j)){
+            count++;
+            j++;
+        }
+
+        gameOver(count);
+    }
+
+    function checkDoc(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while (getValue(x,y) == getValue(x+i,y)){
+            count++;
+            i++;
+        }
+
+        while (getValue(x,y) == getValue(x-j,y)){
+            count++;
+            j++;
+        }
+
+        gameOver(count);
+    }
+
+    function checkCheo1(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while (getValue(x,y) == getValue(x+i,y+i)) {
+            count++;
+            i++;
+        }
+        while (getValue(x,y) == getValue(x-j,y-j)) {
+            count++;
+            j++;
+        }
+        gameOver(count);
+
+    }
+
+    function checkCheo2(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while (getValue(x,y) == getValue(x+i,y-i)) {
+            count++;
+            i++;
+        }
+        while (getValue(x,y) == getValue(x-j,y+j)) {
+            count++;
+            j++;
+        }
+        gameOver(count);
+
+    }
+
+    //checkWin
+    function checkWin(x,y) {
+        checkNgang(x,y);
+        checkDoc(x,y);
+        checkCheo1(x,y);
+        checkCheo2(x,y);
+    }
+
+    function gameOver(count) {
+        if(count >= 5){
+            alert("You Win");
+        }
+    }
+
+
+    drawBoard();
+</script>
+</body>
+</html>
