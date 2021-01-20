@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm</title>
+</head>
+<body>
+<!--<button type="button" value="Alert" onclick="alertMessage()">Alert bai 1</button>-->
+<!--<p>-->
+<!--<label>bai 2-01</label>-->
+<!--<input type="number" oninput="increaseValue(this.value)">-->
+<!--<span id="increase"></span>-->
+<!--</p>-->
+<script>
+    // //bai 1
+    // function alertMessage() {
+    //     alert("Xin chao");
+    // }
+    //////////////////////////////////////////////////////////////////
+
+    // //bai 2
+    // function increaseValue(number) {
+    //     document.getElementById("increase").innerHTML=parseInt(number) + 1;
+    // }
+    //////////////////////////////////////////////////////////////////////
+
+    // //bai 3
+    // let a=parseInt(prompt("nhap a: "));
+    // let b=parseInt(prompt("nhap b: "));
+    // sum(a,b);
+    // function sum(a,b) {
+    //     if (a>b) {
+    //         alert("a > b");
+    //     } else {
+    //         c=a+b
+    //         alert("Tong a va b la: "+c);
+    //     }
+    // }
+    /////////////////////////////////////////////////////////////////////////
+
+    // //bai 4
+    // function addNumbers() {
+    //     firstNum = 4;
+    //     secondNum = 8;
+    //     result = firstNum + secondNum;
+    //     return result;
+    // }
+    // result = 0;
+    // alert(result);
+    // result = addNumbers();
+    // alert(result);
+    /////////////////////////////////////////////////////////////////////
+
+    // //bai 5
+    // let str = prompt("Nhap vap ten ngoi sao: ");
+    // findStar(str);
+    // function findStar (string) {
+    //     let stars = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    //     let constellation = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    //     let dk = 'f';
+    //     for (let i = 0; i<stars.length; i++) {
+    //         if (string==stars[i]) {
+    //             alert("Ten chom sao la: "+constellation[i]);
+    //             dk = 't';
+    //             break;
+    //         }
+    //     }
+    //     if (dk=='f') {alert("Khong tim thay");}
+    // }
+    /////////////////////////////////////////////////////////////
+
+    // //bai 3-02
+    // let number=parseInt(prompt("nhap vao so nguyen"));
+    // factorials(number);
+    // function factorials (num) {
+    //     let result = 1;
+    //     for (let i=num;i>0;i--) {
+    //         result = result*i;
+    //     }
+    //     alert("Giai thua cua "+num+" la "+result);
+    // }
+    ////////////////////////////////////////////////////////////////
+
+    // //bai4-02
+    // let a=prompt("nhap a");
+    // if (isNumber(a) == false) {
+    //     alert("True");
+    // } else {alert("False");}
+    // function isNumber (num) {
+    //     return isNaN(num);
+    // }
+    /////////////////////////////////////////////////////////////////
+
+    // //bai 6-02
+    // let a = parseFloat(prompt("Nhap vao mot so bat ky: "));
+    // checkInt(a);
+    // function checkInt(num) {
+    //     if (num===parseInt(num) && num>0) {
+    //         alert("So nguyen duong");
+    //     } else {alert("Khong phai so nguyen duong");}
+    // }
+    ///////////////////////////////////////////////////////////////////
+
+    // //bai 8-02
+    // let arr1 = [1,2,4,5,6,7,8,9];
+    // function swapArr(arr) {
+    //     let result = arr.reverse();
+    //     console.log(result);
+    // }
+    // swapArr(arr1);
+    ////////////////////////////////////////////////////////////////////
+
+    //bai 9-02
+    let arrays = ['r', 'a', 'w', 'a','q','z'];
+    let a = prompt("Nhap a: ");
+    find(arrays);
+    function find(arr) {
+        let count = 0;
+        for (let i=0;i<arr.length;i++) {
+            if (a==arr[i]) {
+                count++;
+            }
+        }
+        if (count>0) {
+            alert("So lan xuan hien: "+count);
+        } else {
+            alert("-1");
+        }
+    }
+
+
+</script>
+</body>
+</html>
