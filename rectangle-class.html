@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop mo ta hinh chu nhat</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="800px" height="400px">Your browser does not support the canvas element.
+</canvas>
+<p id="result" style="font-size: xx-large"></p>
+<script>
+       let Rectangle = function (width, height) {
+           this.width = width;
+           this.height = height;
+           this.getDientich = function () {
+               return width*height;
+           }
+           this.getChuvi = function () {
+               return 2*(width+height);
+           }
+           this.getWidth = function () {
+               return this.width;
+           }
+           this.getHeight = function () {
+               return this.height;
+           }
+
+       }
+       function draw() {
+           var canvas = document.getElementById("myCanvas")
+           var ctx = canvas.getContext("2d");
+           ctx.fillStyle = "green";
+           ctx.fillRect(0, 0, width, height);
+       }
+
+       let rectangle = new Rectangle(600,400);
+       let dientich = rectangle.getDientich();
+       let chuvi = rectangle.getChuvi();
+       let width = rectangle.getWidth();
+       let height = rectangle.getHeight();
+       draw();
+       document.getElementById("result").innerHTML="Dien tich = "+dientich+" | Chu vi = "+chuvi;
+       //alert("Dien tich = "+dientich+" | Chu vi = "+chuvi);
+
+
+
+
+
+</script>
+</body>
+</html>
