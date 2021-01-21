@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lop mo ta temperature</title>
+</head>
+<body>
+<script>
+    let Temperature = function (C) {
+        this.doC=C;
+        this.getDoF = function () {
+            return C*1.8 + 32;
+        }
+        this.getDoKenvin = function () {
+            return C + 273;
+        }
+    }
+    let temper = new Temperature(25);
+    let DoF = temper.getDoF();
+    let DoKenvin = temper.getDoKenvin();
+    alert("Gia tri do F: "+DoF+" | Gia tri do Kenvin: "+DoKenvin);
+</script>
+</body>
+</html>
