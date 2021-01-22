@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lop mo ta dien thoai</title>
+</head>
+<body>
+<script>
+    function mobile(cellpin){
+        this.cellpin=cellpin;
+        let msg_typing='';
+        let msg_received=[];
+        let msg_send=[];
+
+        this.checkMode=function(mode){
+            if(mode=="on"){
+                alert("mobile is on");
+            }else{
+                alert("mobile is off");
+            }
+        }
+        this.chargePhone=function(){
+            return this.cellpin++;
+        }
+        this.turnPhone=function(mode){
+            if(mode=="on"){
+                alert("mobile is off");
+            }else{
+                alert("mobile is on");
+            }
+        }
+        this.setMsg_typing=function(msg){
+            msg_typing=msg;
+            this.cellpin=cellpin--;
+        }
+        this.receiveMsg=function(msg){
+            msg_received.push(msg);
+            this.cellpin=cellpin--;
+        }
+        this.sendMsg=function(){
+            alert("msg has been send");
+            msg_send.push(msg_typing);
+            msg_typing='';
+            cellpin=cellpin--;
+        }
+        this.getMsg_received=function(i){{
+            this.cellpin=cellpin--;
+            return msg_received[i];
+
+        }}
+        this.getMsg_send=function(i){
+            this.cellpin=cellpin--;
+            return msg_send[i];
+        }
+
+    }
+    let nokia= new mobile(50);
+    let iphone= new mobile(40);
+    nokia.setMsg_typing('xin chao');
+    nokia.sendMsg();
+    let msgsending=nokia.getMsg_send(0);
+    iphone.receiveMsg(msgsending);
+    alert(iphone.getMsg_received(0));
+</script>
+</body>
+</html>
