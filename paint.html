@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pham mem ve</title>
+    <link rel="stylesheet" type="text/css" href="./dinh-dang-paint.css" />
+</head>
+<body>
+<center>
+<div id="tools">
+    <button class="reset" onclick="reset()">RESET</button>
+    <button class="unredo" onclick="undo()">Undo</button>
+    <button class="unredo" onclick="redo()">Redo</button>
+    <button class="eraser" onclick="eraser()">Eraser</button>
+    <button class="tool" onclick="setTool('pen')">Pen</button>
+    <button class="tool" onclick="setTool('line')">Line</button>
+    <button class="tool" onclick="setTool('rect')">Rect</button>
+    <button class="tool" onclick="setTool('circle')">Circle</button>
+
+    <button class="brown" onclick="changeColor('#704214')">Brow</button>
+    <button class="red" onclick="changeColor('#FF0000')">Red&nbsp;</button>
+    <button class="blue" onclick="changeColor('#0000FF')">Blue</button>
+    <button class="green" onclick="changeColor('#00ff00')">Gree</button>
+    <button class="yellow" onclick="changeColor('#FFFF00')">Yell0</button>
+    <button class="orange" onclick="changeColor('#FFA500')">Oran</button>
+    <button class="purple" onclick="changeColor('#800080')">Purp</button>
+    <button class="pink" onclick="changeColor('#FF1493')">Pink</button>
+    <input class="color-picker" oninput="p.color = this.value" type="color">
+
+    <button class="size" onclick="changeLineWidth(1)">Size 1</button>
+    <button class="size" onclick="changeLineWidth(2)">Size 2</button>
+    <button class="size" onclick="changeLineWidth(3)">Size 3</button>
+    <button class="size" onclick="changeLineWidth(4)">Size 4</button>
+    <button class="size" onclick="changeLineWidth(5)">Size 5</button>
+    <button class="size" onclick="changeLineWidth(9)">Size 9</button>
+    <button class="size" onclick="changeLineWidth(13)">Size 13</button>
+    <input type="range" min="1" max="100" oninput="p.lineWidth = this.value">
+</div>
+</center>
+<canvas id="board"></canvas>
+<script type="text/javascript" src="./code-paint.js"></script>
+</body>
+</html>
