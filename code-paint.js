@@ -61,6 +61,10 @@ class paint {
                     this.clear();
                     this.drawCircle(this.startPos, mousePos);
                     break;
+                case 'ellipse':
+                    this.clear();
+                    this.drawEllipse(this.startPos, mousePos);
+                    break;
             }
 
         }
@@ -100,8 +104,8 @@ class paint {
         }
     }
     drawBackgroundd() {
-        this.ctx.fillStyle = '#ffffff'
-        this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height)
+        this.ctx.fillStyle = '#ffffff';
+        this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);
     }
     drawRect(startPos, endPos) {
         this.ctx.lineWidth=this.lineWidth;
@@ -109,12 +113,20 @@ class paint {
         this.ctx.beginPath();
         this.ctx.rect(startPos.X,startPos.Y,endPos.X-startPos.X,endPos.Y-startPos.Y);
         this.ctx.stroke();
+
     }
     drawCircle(startPos, endPos) {
         this.ctx.lineWidth=this.lineWidth;
         this.ctx.strokeStyle=this.color;
         this.ctx.beginPath();
-        this.ctx.arc(startPos.X,startPos.Y,(endPos.X+endPos.Y)-(startPos.X+startPos.Y),0,2*Math.PI);
+        this.ctx.arc(startPos.X,startPos.Y,Math.abs((endPos.X+endPos.Y)-(startPos.X+startPos.Y)),0,2*Math.PI);
+        this.ctx.stroke();
+    }
+    drawEllipse(startPos, endPos) {
+        this.ctx.lineWidth=this.lineWidth;
+        this.ctx.strokeStyle=this.color;
+        this.ctx.beginPath();
+        this.ctx.ellipse(startPos.X, startPos.Y, Math.abs(endPos.X-startPos.X), Math.abs(endPos.Y-startPos.Y), Math.PI, 0, 2 * Math.PI);
         this.ctx.stroke();
     }
     drawLine(startPos, endPos) {

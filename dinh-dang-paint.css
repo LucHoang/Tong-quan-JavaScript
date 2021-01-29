@@ -59,10 +59,7 @@ body {
     background-color: limegreen;
 }
 .color-picker {
-    /*align-self: center;*/
-    /*justify-content: center;*/
     align-items: center;
-    /*height: 30px;*/
 }
 .brown {
     border: 2px solid white;
