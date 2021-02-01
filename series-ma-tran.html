@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+<script>
+    let arr = [[1,5,3,2],[5,2,9,5],[7,2,4,3],[2,7,5,3]];
+
+    // //1.   Tính tích từng cột ma trận, tìm max, in ra max
+    // let mulArr = [];
+    // let max = 1;
+    // for (let j=0;j<4;j++) {
+    //     let mul = 1;
+    //     for (let i=0;i<arr.length;i++) {
+    //         mul *= arr[i][j];
+    //         //console.log(mul);
+    //     }
+    //     mulArr[j]=mul;
+    //     max = mul>max?mul:max;
+    //
+    // }
+    // console.log(mulArr);
+    // console.log(max);
+
+    // //2.   In ra tổng đường chéo chính, đường chéo phụ
+    // let sum1= 0;
+    // let sum2=0;
+    // for (let i=0;i<arr.length;i++) {
+    //     for (let j=0;j<arr[i].length;j++) {
+    //         if (i==j) {
+    //             sum1+=arr[i][j];
+    //         }
+    //     }
+    // }
+    // console.log(sum1);
+    //
+    // for (let i=0;i<arr.length;i++) {
+    //     for (let j=0;j<arr[i].length;j++) {
+    //         if (j==arr[i].length-1-i) {
+    //             sum2+=arr[i][j];
+    //         }
+    //     }
+    // }
+    // console.log(sum2);
+
+    // //3.   In ra tổng ma trận trên
+    // let sumAbove = 0;
+    // for (let i =0;i<arr.length/2;i++) {
+    //     for (let j=0;j<arr[i].length;j++) {
+    //         sumAbove += arr[i][j];
+    //     }
+    // }
+    // console.log(sumAbove);
+
+    //  4. In ra tích ma trận dưới
+    let mulBellow = 1;
+    for (let i=arr.length/2;i<arr.length;i++) {
+        for (let j= 0; j<arr[i].length;j++) {
+            mulBellow *= arr[i][j];
+        }
+    }
+    console.log(mulBellow);
+
+</script>
+</body>
+</html>
