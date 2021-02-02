@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QLSV</title>
+</head>
+<body>
+<div id="res"></div>
+<script>
+    function SinhVien(msv, hoten, toan, ly, hoa) {
+        this.msv = msv;
+        this.hoten = hoten;
+        this.toan = toan;
+        this.ly = ly;
+        this.hoa = hoa;
+        this.dtb = (this.toan+this.ly+this.hoa)/3;
+        this.show = function () {
+            return "MSV: "+this.msv+", Ho Ten: "+this.hoten+", DTB: "+this.dtb;
+        }
+    }
+
+    function QLSV() {
+        this.dssv = [new SinhVien(1,"Long",3,5,9),new SinhVien(2,"Linh",7,8,7),new SinhVien(3,"Kien",9,8,8)];
+        this.add = function (sv) {
+            this.dssv.push(sv);
+        }
+        this.del = function (msv) {
+            for (let i=0;i<this.dssv.length;i++) {
+                if (msv==this.dssv[i].msv) {
+                    this.dssv.splice(i,1);
+                }
+            }
+        }
+        this.show = function () {
+            let str = "";
+            for (let i=0;i<this.dssv.length;i++) {
+                str += this.dssv[i].show() + "</br>";
+            }
+            return str;
+        }
+        this.edit = function (msv,sv) {
+            for (let i=0;i<this.dssv.length;i++) {
+                if (msv==this.dssv[i].msv) {
+                    this.dssv[i] = sv;
+                }
+            }
+        }
+        this.sapxep = function () {
+            // let temp;
+            // for (let i=0;i<this.dssv.length-1;i++) {
+            //     for (let j=i+1;j<this.dssv.length;j++){
+            //         if (this.dssv[i].dtb<this.dssv[j].dtb) {
+            //             temp=this.dssv[i];
+            //             this.dssv[i]=this.dssv[j];
+            //             this.dssv[j]=temp;
+            //         }
+            //     }
+            // }
+            this.dssv.sort(function (a, b) {return b.dtb-a.dtb});
+        }
+    }
+    let qlsv = new QLSV();
+    document.getElementById("res").innerHTML = qlsv.show();
+    qlsv.add(new SinhVien(4,"lai",7,7,7));
+    qlsv.edit(2,new SinhVien(2,"van",2,3,4));
+    //qlsv.dssv.dtb.sort(function (a,b) {return b-a});
+    qlsv.sapxep();
+    document.getElementById("res").innerHTML = qlsv.show();
+</script>
+</body>
+</html>
