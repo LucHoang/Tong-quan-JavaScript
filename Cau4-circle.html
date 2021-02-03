@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau4 Circle</title>
+</head>
+<body>
+<canvas id="myCanvas" width="800px" height="800px"></canvas>
+<script>
+    let Circle = function(x,y,radius) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+
+        this.render = function(color) {
+            this.canvas = document.getElementById("myCanvas")
+            this.ctx = this.canvas.getContext("2d");
+            //this.ctx.lineWidth=this.lineWidth;
+            //this.ctx.strokeStyle=color;
+            this.ctx.fillStyle = color;
+            this.ctx.beginPath();
+            this.ctx.arc(this.x,this.y,this.radius,0,2*Math.PI);
+            //this.ctx.stroke();
+            this.ctx.fill();
+        }
+    }
+    let circle = new Circle(100,100,100);
+    circle.render("#000000");
+
+</script>
+</body>
+</html>

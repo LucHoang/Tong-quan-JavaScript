@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau 1 findmax</title>
+</head>
+<body>
+<script>
+    let array = [3,1,5,7,4,9,6];
+    let max = array[0];
+    function findMax(arr) {
+        for (let i=1;i<arr.length;i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+    }
+    findMax(array);
+    alert("Diem cao nhat la: "+max);
+</script>
+</body>
+</html>
